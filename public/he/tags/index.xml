@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Japanese</title>
-    <link>http://localhost:1313/japanese/he/tags/</link>
+    <link>https://gu-lidong.github.io/japanese/he/tags/</link>
     <description>Recent content in Tags on Japanese</description>
     <generator>Hugo</generator>
     <language>he</language>
-    <atom:link href="http://localhost:1313/japanese/he/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gu-lidong.github.io/japanese/he/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

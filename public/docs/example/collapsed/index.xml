@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Japanese</title>
-    <link>http://localhost:1313/japanese/docs/example/collapsed/</link>
+    <link>https://gu-lidong.github.io/japanese/docs/example/collapsed/</link>
     <description>Recent content on Japanese</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/japanese/docs/example/collapsed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gu-lidong.github.io/japanese/docs/example/collapsed/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

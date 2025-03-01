@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Japanese</title>
-    <link>http://localhost:1313/japanese/tags/</link>
+    <link>https://gu-lidong.github.io/japanese/tags/</link>
     <description>Recent content in Tags on Japanese</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Mar 2025 18:16:14 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/japanese/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gu-lidong.github.io/japanese/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Development</title>
-      <link>http://localhost:1313/japanese/tags/development/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/development/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>http://localhost:1313/japanese/tags/go/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/go/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/go/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>http://localhost:1313/japanese/tags/golang/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/golang/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/japanese/tags/hugo/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/hugo/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Templates</title>
-      <link>http://localhost:1313/japanese/tags/templates/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/templates/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/templates/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/templates/</guid>
       <description></description>
     </item>
     <item>
       <title>Themes</title>
-      <link>http://localhost:1313/japanese/tags/themes/</link>
+      <link>https://gu-lidong.github.io/japanese/tags/themes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/japanese/tags/themes/</guid>
+      <guid>https://gu-lidong.github.io/japanese/tags/themes/</guid>
       <description></description>
     </item>
   </channel>
