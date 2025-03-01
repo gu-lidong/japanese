@@ -1,0 +1,4 @@
+baseURL = 'https://gu-lidong.github.io/japanese/'
+languageCode = 'en-us'
+title = 'Japanese'
+theme = 'hugo-book'
