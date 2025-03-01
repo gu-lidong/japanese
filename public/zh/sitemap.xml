@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gu-lidong.github.io/japanese/zh/categories/</loc>
+    <loc>http://localhost:1313/japanese/zh/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gu-lidong.github.io/japanese/categories/"
+                href="http://localhost:1313/japanese/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="https://gu-lidong.github.io/japanese/he/categories/"
+                href="http://localhost:1313/japanese/he/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://gu-lidong.github.io/japanese/zh/categories/"
+                href="http://localhost:1313/japanese/zh/categories/"
                 />
   </url><url>
-    <loc>https://gu-lidong.github.io/japanese/zh/</loc>
+    <loc>http://localhost:1313/japanese/zh/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gu-lidong.github.io/japanese/"
+                href="http://localhost:1313/japanese/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="https://gu-lidong.github.io/japanese/he/"
+                href="http://localhost:1313/japanese/he/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://gu-lidong.github.io/japanese/zh/"
+                href="http://localhost:1313/japanese/zh/"
                 />
   </url><url>
-    <loc>https://gu-lidong.github.io/japanese/zh/tags/</loc>
+    <loc>http://localhost:1313/japanese/zh/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gu-lidong.github.io/japanese/tags/"
+                href="http://localhost:1313/japanese/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="he"
-                href="https://gu-lidong.github.io/japanese/he/tags/"
+                href="http://localhost:1313/japanese/he/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://gu-lidong.github.io/japanese/zh/tags/"
+                href="http://localhost:1313/japanese/zh/tags/"
                 />
   </url>
 </urlset>
