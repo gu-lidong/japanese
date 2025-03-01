@@ -5,7 +5,22 @@
     <link>http://localhost:1313/japanese/categories/</link>
     <description>Recent content in Categories on Japanese</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/japanese/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Development</title>
+      <link>http://localhost:1313/japanese/categories/Development/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/japanese/categories/Development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>http://localhost:1313/japanese/categories/golang/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/japanese/categories/golang/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
