@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Japanese'
 theme = 'hugo-book'
 
+[[module.mounts]]
+source = 'images'
+target = 'static/images'
+
 # Book configuration
 disablePathToLower = true
 enableGitInfo = true
