@@ -51,10 +51,7 @@
     <loc>http://localhost:1313/japanese/docs/japanese/lesson/%E9%AB%98%E7%BA%A7/</loc>
   </url><url>
     <loc>http://localhost:1313/japanese/docs/japanese/</loc>
-    <lastmod>2025-03-02T00:09:44+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/japanese/docs/nginx/</loc>
-    <lastmod>2025-03-05T22:32:55+08:00</lastmod>
+    <lastmod>2025-03-05T23:01:35+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/japanese/docs/english/grammar/004/</loc>
     <lastmod>2025-03-02T00:09:44+08:00</lastmod>
@@ -85,6 +82,9 @@
   </url><url>
     <loc>http://localhost:1313/japanese/docs/nginx/QA/</loc>
     <lastmod>2025-03-05T22:32:55+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/japanese/docs/nginx/</loc>
+    <lastmod>2025-03-05T22:43:54+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/japanese/posts/creating-a-new-theme/</loc>
     <lastmod>2025-03-01T18:16:14+08:00</lastmod>
@@ -234,7 +234,7 @@
     <lastmod>2025-03-01T18:16:14+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/japanese/docs/</loc>
-    <lastmod>2025-03-05T22:32:55+08:00</lastmod>
+    <lastmod>2025-03-05T23:01:35+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/japanese/</loc>
     <lastmod>2025-03-01T18:16:14+08:00</lastmod>
