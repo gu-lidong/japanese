@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Japanese</title>
+    <link>http://localhost:1313/japanese/docs/nginx/QA/</link>
+    <description>Recent content on Japanese</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/japanese/docs/nginx/QA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/japanese/docs/nginx/QA/SNI/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/japanese/docs/nginx/QA/SNI/</guid>
+      <description>&lt;h1 id=&#34;后端是一个ip对多个站点的情况&#34;&gt;&#xA;  后端是一个IP对多个站点的情况&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%90%8e%e7%ab%af%e6%98%af%e4%b8%80%e4%b8%aaip%e5%af%b9%e5%a4%9a%e4%b8%aa%e7%ab%99%e7%82%b9%e7%9a%84%e6%83%85%e5%86%b5&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;nginx的后端：通过一个ip提供多个站点服务&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;502 bad gateway问题&#xA;&lt;ol&gt;&#xA;&lt;li&gt;解决方法：启用proxy_ssl_server_name&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; # 设置 SNI，确保后端服务器返回正确的证书&#xA; proxy_ssl_name backend.example.com;&#xA; proxy_ssl_server_name on;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;设置proxy_set_header出现404问题&#xA;&lt;ol&gt;&#xA;&lt;li&gt;解决方法：&#xA;删除这个参数，如果你&lt;strong&gt;没有&lt;/strong&gt;显式设置 &lt;code&gt;proxy_set_header Host&lt;/code&gt;，Nginx 在代理请求时会自动使用 &lt;code&gt;proxy_pass&lt;/code&gt; 目标的主机名（即 &lt;code&gt;$proxy_host&lt;/code&gt;）作为 &lt;code&gt;Host&lt;/code&gt; 头。&lt;/li&gt;&#xA;&lt;li&gt;$host取的值是客户端请求带的Host值，如果客户端不带，则取nginx中server_name的值。而因为后端是多个站点，后端可能找不到对应Host值的站点，因此报404，400等。&lt;/li&gt;&#xA;&lt;li&gt;$proxy_host取的值是proxy_pass的域名或IP或变量。&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 传递 Host 头，确保后端识别正确的站点。&#xA;# 删除则使用$proxy_host作为Host头传给后端。&#xA;proxy_set_header Host $host;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>
