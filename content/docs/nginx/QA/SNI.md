@@ -23,7 +23,7 @@ nginx的后端：通过一个ip提供多个站点服务
 	1. 解决方法：
 		添加这个参数：`proxy_set_header Referer https://example.com$request_uri;`
 	2. $request_uri 变量在 Nginx 中表示 完整的请求 URI（包含路径和查询参数，但不包含域名和协议）。它的值来源于 客户端请求的原始 URI，不会进行 URL 解码。
-	3. $proxy_host取的值是proxy_pass的域名或IP或变量。
+	3. 例：
 		```
 		请求: GET https://example.com/path/to/page?user=123&action=view
 
