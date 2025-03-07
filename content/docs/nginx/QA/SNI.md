@@ -18,3 +18,14 @@ nginx的后端：通过一个ip提供多个站点服务
 		# 删除则使用$proxy_host作为Host头传给后端。
 		proxy_set_header Host $host;
 		```
+
+3. 如贵出现the referrer does not match the host问题
+	1. 解决方法：
+		添加这个参数：`proxy_set_header Referer https://example.com$request_uri;`
+	2. $request_uri 变量在 Nginx 中表示 完整的请求 URI（包含路径和查询参数，但不包含域名和协议）。它的值来源于 客户端请求的原始 URI，不会进行 URL 解码。
+	3. $proxy_host取的值是proxy_pass的域名或IP或变量。
+		```
+		请求: GET https://example.com/path/to/page?user=123&action=view
+
+  		$request_uri = "/path/to/page?user=123&action=view"
+  		```
