@@ -9,12 +9,14 @@
 
 nginx的后端：通过一个ip提供多个站点服务
 
+
 502 bad gateway问题
 
 解决方法：启用proxy_ssl_server_name
  # 设置 SNI，确保后端服务器返回正确的证书
  proxy_ssl_name backend.example.com;
  proxy_ssl_server_name on;
+
 
 
 
@@ -30,6 +32,19 @@ proxy_set_header Host $host;
 
 
 
+
+如贵出现the referrer does not match the host问题
+
+解决方法：
+添加这个参数：proxy_set_header Referer https://example.com$request_uri;
+$request_uri 变量在 Nginx 中表示 完整的请求 URI（包含路径和查询参数，但不包含域名和协议）。它的值来源于 客户端请求的原始 URI，不会进行 URL 解码。
+例：
+请求: GET https://example.com/path/to/page?user=123&amp;action=view
+
+$request_uri = &#34;/path/to/page?user=123&amp;action=view&#34;
+
+
+
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -37,18 +52,21 @@ proxy_set_header Host $host;
   <meta property="og:site_name" content="Japanese">
   <meta property="og:title" content="Japanese">
   <meta property="og:description" content="后端是一个IP对多个站点的情况 # nginx的后端：通过一个ip提供多个站点服务
-502 bad gateway问题 解决方法：启用proxy_ssl_server_name # 设置 SNI，确保后端服务器返回正确的证书 proxy_ssl_name backend.example.com; proxy_ssl_server_name on; 设置proxy_set_header出现404问题 解决方法： 删除这个参数，如果你没有显式设置 proxy_set_header Host，Nginx 在代理请求时会自动使用 proxy_pass 目标的主机名（即 $proxy_host）作为 Host 头。 $host取的值是客户端请求带的Host值，如果客户端不带，则取nginx中server_name的值。而因为后端是多个站点，后端可能找不到对应Host值的站点，因此报404，400等。 $proxy_host取的值是proxy_pass的域名或IP或变量。 # 传递 Host 头，确保后端识别正确的站点。 # 删除则使用$proxy_host作为Host头传给后端。 proxy_set_header Host $host;">
+502 bad gateway问题
+解决方法：启用proxy_ssl_server_name # 设置 SNI，确保后端服务器返回正确的证书 proxy_ssl_name backend.example.com; proxy_ssl_server_name on; 设置proxy_set_header出现404问题
+解决方法： 删除这个参数，如果你没有显式设置 proxy_set_header Host，Nginx 在代理请求时会自动使用 proxy_pass 目标的主机名（即 $proxy_host）作为 Host 头。 $host取的值是客户端请求带的Host值，如果客户端不带，则取nginx中server_name的值。而因为后端是多个站点，后端可能找不到对应Host值的站点，因此报404，400等。 $proxy_host取的值是proxy_pass的域名或IP或变量。 # 传递 Host 头，确保后端识别正确的站点。 # 删除则使用$proxy_host作为Host头传给后端。 proxy_set_header Host $host; 如贵出现the referrer does not match the host问题
+解决方法： 添加这个参数：proxy_set_header Referer https://example.com$request_uri; $request_uri 变量在 Nginx 中表示 完整的请求 URI（包含路径和查询参数，但不包含域名和协议）。它的值来源于 客户端请求的原始 URI，不会进行 URL 解码。 例： 请求: GET https://example.com/path/to/page?user=123&amp;action=view $request_uri = &#34;/path/to/page?user=123&amp;action=view&#34;">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-03-05T22:32:55+08:00">
+    <meta property="article:modified_time" content="2025-03-07T13:17:12+08:00">
 <title>Sni | Japanese</title>
 <link rel="icon" href="/japanese/favicon.png" >
 <link rel="manifest" href="/japanese/manifest.json">
 <link rel="canonical" href="http://localhost:1313/japanese/docs/nginx/QA/SNI/">
 <link rel="stylesheet" href="/japanese/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/japanese/fuse.min.js"></script>
-  <script defer src="/japanese/en.search.min.7a156f611a54a6fd0abdd86d8823404aafc09c59957a63f24da1854952b382c0.js" integrity="sha256-ehVvYRpUpv0KvdhtiCNASq/AnFmVemPyTaGFSVKzgsA=" crossorigin="anonymous"></script>
+  <script defer src="/japanese/en.search.min.ce800960da89d4831531f1a142c15676e2abc4f3ab89e98c0a52222ef8c4cb65.js" integrity="sha256-zoAJYNqJ1IMVMfGhQsFWduKrxPOriemMClIiLvjEy2U=" crossorigin="anonymous"></script>
 
   <script defer src="/japanese/sw.min.b5f9d61a6da771d9ae8cb6b75ce3923408833e716ec84531e56e803eeb045e89.js" integrity="sha256-tfnWGm2ncdmujLa3XOOSNAiDPnFuyEUx5W6APusEXok=" crossorigin="anonymous"></script>
 <!--
@@ -368,7 +386,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-691f0874ea35a78d83e8a21321c3ce08" class="toggle"  />
     <label for="section-691f0874ea35a78d83e8a21321c3ce08" class="flex justify-between">
-      <a role="button" class="">Grammar</a>
+      <a href="/japanese/docs/japanese/grammar/" class="">Grammar</a>
     </label>
   
 
@@ -489,7 +507,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-9f20218cbee1be407a381e523a3a905c" class="toggle"  />
     <label for="section-9f20218cbee1be407a381e523a3a905c" class="flex justify-between">
-      <a role="button" class="">Qa</a>
+      <a href="/japanese/docs/japanese/grammar/QA/" class="">Qa</a>
     </label>
   
 
@@ -542,7 +560,20 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/japanese/docs/japanese/grammar/QA/%E3%82%88%E3%81%86%E3%81%A0_%E3%82%89%E3%81%97%E3%81%84/" class="">ようだ らしい</a>
+    <a href="/japanese/docs/japanese/grammar/QA/%E3%81%AA%E3%82%89%E3%81%A8%E3%82%82%E3%81%8B%E3%81%8F/" class="">ならともかく</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/japanese/docs/japanese/grammar/QA/%E4%B8%8D%E7%AE%A1%E6%97%A0%E8%AE%BA/" class="">不管，无论</a>
   
 
         </li>
@@ -581,7 +612,46 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/japanese/docs/japanese/grammar/QA/%E5%83%8F/" class="">像</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/japanese/docs/japanese/grammar/QA/%E5%BF%9C/" class="">応</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/japanese/docs/japanese/grammar/QA/%E6%95%AC%E8%AF%AD/" class="">敬语</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/japanese/docs/japanese/grammar/QA/%E6%96%AD%E5%AE%9A/" class="">断定</a>
   
 
         </li>
@@ -607,7 +677,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/japanese/docs/japanese/grammar/QA/%E9%99%90%E3%82%8A/" class="">限り</a>
+    <a href="/japanese/docs/japanese/grammar/QA/%E9%99%90/" class="">限</a>
   
 
         </li>
@@ -742,6 +812,53 @@ https://github.com/alex-shpak/hugo-book
       
     
   </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7f8eb555e24b98f2f416a363f1c7b364" class="toggle"  />
+    <label for="section-7f8eb555e24b98f2f416a363f1c7b364" class="flex justify-between">
+      <a href="/japanese/docs/japanese/news/" class="">News</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/japanese/docs/japanese/news/%E5%B1%B1%E3%81%AE%E7%81%AB%E4%BA%8B/" class="">山の火事</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/japanese/docs/japanese/%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AF%AD/" class="">工作日语</a>
+  
 
         </li>
       
@@ -1167,7 +1284,8 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>nginx的后端：通过一个ip提供多个站点服务</p>
 <ol>
-<li>502 bad gateway问题
+<li>
+<p>502 bad gateway问题</p>
 <ol>
 <li>解决方法：启用proxy_ssl_server_name
 <pre tabindex="0"><code> # 设置 SNI，确保后端服务器返回正确的证书
@@ -1176,7 +1294,8 @@ https://github.com/alex-shpak/hugo-book
 </code></pre></li>
 </ol>
 </li>
-<li>设置proxy_set_header出现404问题
+<li>
+<p>设置proxy_set_header出现404问题</p>
 <ol>
 <li>解决方法：
 删除这个参数，如果你<strong>没有</strong>显式设置 <code>proxy_set_header Host</code>，Nginx 在代理请求时会自动使用 <code>proxy_pass</code> 目标的主机名（即 <code>$proxy_host</code>）作为 <code>Host</code> 头。</li>
@@ -1185,6 +1304,19 @@ https://github.com/alex-shpak/hugo-book
 <pre tabindex="0"><code># 传递 Host 头，确保后端识别正确的站点。
 # 删除则使用$proxy_host作为Host头传给后端。
 proxy_set_header Host $host;
+</code></pre></li>
+</ol>
+</li>
+<li>
+<p>如贵出现the referrer does not match the host问题</p>
+<ol>
+<li>解决方法：
+添加这个参数：<code>proxy_set_header Referer https://example.com$request_uri;</code></li>
+<li>$request_uri 变量在 Nginx 中表示 完整的请求 URI（包含路径和查询参数，但不包含域名和协议）。它的值来源于 客户端请求的原始 URI，不会进行 URL 解码。</li>
+<li>例：
+<pre tabindex="0"><code>请求: GET https://example.com/path/to/page?user=123&amp;action=view
+
+$request_uri = &#34;/path/to/page?user=123&amp;action=view&#34;
 </code></pre></li>
 </ol>
 </li>
@@ -1198,9 +1330,9 @@ proxy_set_header Host $host;
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/gu-lidong/japanese/commit/c244c5c74f9c5819c285cdba6db231e2a68178fa" title='Last modified by GLD-gld | March 5, 2025' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/gu-lidong/japanese/commit/d01ad36755bb0c72754aada4afde62ef52fa2f32" title='Last modified by gu-lidong | March 7, 2025' target="_blank" rel="noopener">
       <img src="/japanese/svg/calendar.svg" class="book-icon" alt="" />
-      <span>March 5, 2025</span>
+      <span>March 7, 2025</span>
     </a>
   </div>
 
